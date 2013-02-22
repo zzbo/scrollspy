@@ -52,19 +52,16 @@
                     _bindClickScroll();
             },
             _expands : function(trigger, panel) {
-                var spyArray,
-                    tempObj,
+                var tempObj,
                     options = this.options,
                     trigger = trigger || options.trigger,
                     panel = panel || options.panel,
                     triggerDomArray = this.triggerDomArray = $(trigger),
                     panelDomArray = this.panelDomArray = $(panel),
-                    _spyArray = this._spyArray;
+                    spyArray = that._spyArray;
 
-                    if (_spyArray) {
-                        spyArray = _spyArray;
-                    }
-                    else {
+                    //refresh
+                    if (arguments.length == 0) {
                         spyArray = [];
                     }
 
