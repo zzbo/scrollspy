@@ -15,7 +15,7 @@
           return factory(window.jQuery);
         }
     })(function ($) {
-        var name = 'scrollspy';
+        var name = 'jscrollspy';
 
         function Plugin(node, options){
             this._init(node, options);
@@ -98,10 +98,10 @@
             _scrollEvent : function() {
                 var i,
                     len,
-                    curObject,
                     spyObject,
                     _scrollTop,
                     _spyArray = this._spyArray,
+                    curObject = this.curObject,
                     options = this.options,
                     node = options.node,
                     scrollTop = node.scrollTop(),
@@ -129,10 +129,12 @@
                                 if (curObject != spyObject) {
                                     triggerDomArray.removeClass(activeCls);
                                     spyObject.triggerDom.addClass(activeCls);
-                                }
 
-                                if(options.spyEvent) {
-                                    options.spyEvent.call(spyObject);
+                                    if(options.spyEvent) {
+                                      options.spyEvent.call(spyObject);
+                                    }
+
+                                  this.curObject = spyObject;
                                 }
                             }
                             isInFlag = true;
@@ -258,3 +260,4 @@
 
     });
 })();
+
