@@ -15,7 +15,7 @@
           return factory(window.jQuery);
         }
     })(function ($) {
-        var name = 'jscrollspy';
+        var name = 'scrollspy';
 
         function Plugin(node, options){
             this._init(node, options);
