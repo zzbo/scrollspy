@@ -58,6 +58,7 @@
             },
             _expands : function(trigger, panel) {
                 var tempObj,
+                    that = this,
                     options = this.options,
                     trigger = trigger || options.trigger,
                     panel = panel || options.panel,
